@@ -25,5 +25,3 @@ public interface EmployeeRepository extends MongoRepository<Employee,String> {
     @Override
     void delete(String s);              // delete by ID
 }
-
-

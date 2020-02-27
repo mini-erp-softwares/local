@@ -11,6 +11,6 @@ import java.util.List;
 public interface EmployeeService {
     List<Employee> findAll();
     Employee save(Employee employee);
-    
-    
+    void delete(String employeeId);
+    Employee update(Employee employee);
 }

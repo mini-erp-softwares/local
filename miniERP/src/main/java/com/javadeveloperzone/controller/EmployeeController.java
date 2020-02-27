@@ -15,7 +15,9 @@ public class EmployeeController {
 
     // to add new employee
     @RequestMapping(value = "save",method = RequestMethod.POST)     // or user @GetMapping
-    public Employee save(Employee employee){
+    public Employee save(@RequestBody Employee employee){
+    		System.out.println("---"+employee.getEmployeeName());
+    		System.out.println("----"+employee.getEmployeeRole());
         return employeeService.save(employee);
     }
 
