@@ -8,8 +8,9 @@
  
  	<!--  Based on size -->
     <RollingFile name="RollingFile"
-            fileName="./logs/spring-boot-logger-log4j2.log"
-            filePattern="./logs/$${date:yyyy-MM}/spring-boot-logger-log4j2-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <!--  fileName="./logs/spring-boot-logger-log4j2.log" -->
+            fileName="/Users/boot/Documents/workspace-sts-3.9.2.RELEASE/miniERP/logs/application.log"
+            filePattern="/Users/boot/Documents/workspace-sts-3.9.2.RELEASE/miniERP/logs/$${date:yyyy-MM}/application-%d{-dd-MMMM-yyyy}-%i.log.gz">
             <PatternLayout>
                 <pattern>%d %p %C{1.} [%t] %m%n</pattern>
             </PatternLayout>
@@ -23,7 +24,7 @@
         </RollingFile>
         
 		<Loggers>
-		    <AsyncLogger name="com.javadeveloperzone" level="debug" additivity="false">
+		    <AsyncLogger name="com.ent.mini.erp" level="debug" additivity="false">
 		        <AppenderRef ref="ConsoleAppender" />
 		        <AppenderRef ref="FileAppender" />
 		    </AsyncLogger>
@@ -51,9 +52,9 @@
 		</SMTP>
     </Appenders>
     
-    <Policies>
+    <!--  <Policies>
     		<TimeBasedTriggeringPolicy interval="1" />
-    </Policies>
+    </Policies> -->
  
     <Loggers>
         <!-- LOG everything at INFO level -->
@@ -63,7 +64,7 @@
         </Root>
  
         <!-- LOG "com.baeldung*" at TRACE level -->
-        <Logger name="com.javadeveloperzone" level="trace"></Logger>
+        <Logger name="com.ent.mini.erp" level="trace"></Logger>
     </Loggers>
  
 </Configuration>
