@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.ent.mini.erp.model.Material;
 
 import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -21,7 +22,8 @@ public interface MaterialRepository extends MongoRepository<Material,String> {
     @Query(value = "{ 'materialName' : ?0 }")
     List<Material> findByMaterialName(String name);       // find Material by name
 
-    Material findByMaterialId(String id);           // find
+    @Query(value = "{ 'materialId' : ?0 }")
+    Optional<Material> findById(String materialId);           // find
 
     @Override
     void delete(String s);              // delete by ID

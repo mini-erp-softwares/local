@@ -10,6 +10,7 @@ import com.ent.mini.erp.repository.MaterialRepository;
 import com.ent.mini.erp.service.MaterialService;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by mini erp on 2020.
@@ -45,4 +46,10 @@ public class MaterialServiceImpl implements MaterialService {
     public Material update(Material material) {
         return materialRepository.save(material);
     }
+
+	@Override
+	public Optional<Material> getMaterial(String materialId) {
+		// TODO Auto-generated method stub
+		return materialRepository.findById(materialId);
+	}
 }
